@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bhki8ferbtk7q"]
+
+[ext_resource type="Texture2D" uid="uid://dm3yso06l31p1" path="res://Assets/Objects/Tablet/TabletScreen.png" id="1_gx1mf"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_gx1mf")
+roughness = 0.1
+clearcoat_enabled = true
+clearcoat_roughness = 0.01
