@@ -1,23 +1,19 @@
 extends Node2D
 
 @onready var option_container = $OptionContainer
-@onready var mute_btn = $OptionContainer/Mute
-@onready var unmute_btn = $OptionContainer/Unmute
+@onready var settings_background = $OptionContainer/"SettingsBackground"
 
 var is_open = false
 var tween: Tween
 var hidden_x: float
 var shown_x: float
+var is_muted = false
 
 func _ready():
 	shown_x = option_container.position.x
-	hidden_x = shown_x + 600  # slides in from the right
+	hidden_x = shown_x + 1500
 	option_container.position.x = hidden_x
 	option_container.visible = false
-
-	# Show mute, hide unmute at start
-	mute_btn.visible = true
-	unmute_btn.visible = false
 
 func toggle_panel():
 	if tween:
@@ -37,14 +33,16 @@ func toggle_panel():
 		is_open = false
 
 func on_mute_clicked():
-	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true)
-	mute_btn.visible = false
-	unmute_btn.visible = true
+	if not is_muted:
+		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true)
+		is_muted = true
+	else:
+		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), false)
+		is_muted = false
 
 func on_unmute_clicked():
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), false)
-	mute_btn.visible = true
-	unmute_btn.visible = false
+	is_muted = false
 
 func on_music_on_clicked():
 	var current = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master"))
