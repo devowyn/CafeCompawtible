@@ -1,7 +1,8 @@
 extends Node2D
 
 @onready var option_container = $OptionContainer
-@onready var settings_background = $OptionContainer/"SettingsBackground"
+@onready var settings_background = $OptionContainer/SettingsBackground
+@onready var overlay = $Overlay
 
 var is_open = false
 var tween: Tween
@@ -11,9 +12,10 @@ var is_muted = false
 
 func _ready():
 	shown_x = option_container.position.x
-	hidden_x = shown_x + 1500
+	hidden_x = shown_x + 1200
 	option_container.position.x = hidden_x
 	option_container.visible = false
+	overlay.visible = false
 
 func toggle_panel():
 	if tween:
@@ -23,6 +25,7 @@ func toggle_panel():
 	tween.set_trans(Tween.TRANS_BACK)
 
 	if not is_open:
+		overlay.visible = true
 		option_container.visible = true
 		tween.tween_property(option_container, "position:x", shown_x, 0.4)
 		is_open = true
@@ -30,6 +33,7 @@ func toggle_panel():
 		tween.tween_property(option_container, "position:x", hidden_x, 0.3)
 		await tween.finished
 		option_container.visible = false
+		overlay.visible = false
 		is_open = false
 
 func on_mute_clicked():
