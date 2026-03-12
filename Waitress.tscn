@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dsm3u5hx6gyxw"]
+
+[ext_resource type="Texture2D" uid="uid://baera860qmnfu" path="res://Assets/Characters/Waitress.png" id="1_u77oh"]
+[ext_resource type="Script" uid="uid://1y5osjey4ugi" path="res://Waitress.gd" id="2_22uj7"]
+
+[node name="Waitress" type="Sprite2D" unique_id=1283062759 groups=["Customer"]]
+z_index = 5
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_u77oh")
+script = ExtResource("2_22uj7")

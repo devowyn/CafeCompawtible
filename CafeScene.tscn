@@ -2,21 +2,21 @@
 
 [ext_resource type="Texture2D" uid="uid://dm3yso06l31p1" path="res://Assets/Objects/Tablet/TabletScreen.png" id="1_cnf0e"]
 [ext_resource type="Texture2D" uid="uid://cusuxwk6605sr" path="res://Assets/Objects/Counter.png" id="1_lvsig"]
+[ext_resource type="Script" uid="uid://321044n1kho4" path="res://cafe_scene.gd" id="1_nv1sv"]
+[ext_resource type="PackedScene" uid="uid://d4cjmnhpi6x4" path="res://GymGuy.tscn" id="2_cnf0e"]
 [ext_resource type="Texture2D" uid="uid://dm18wofp0ms3j" path="res://Assets/Backgrounds/Cafe Background.png" id="2_j7tw7"]
 [ext_resource type="Script" uid="uid://b6xrx3508u7pa" path="res://tablet_screen.gd" id="2_qjl7a"]
 [ext_resource type="Script" uid="uid://dttu2bxbk7i0k" path="res://title_page.gd" id="2_qnet5"]
-[ext_resource type="Texture2D" uid="uid://bucp837l3ir34" path="res://Assets/Characters/Vet.PNG" id="3_3n21d"]
+[ext_resource type="PackedScene" uid="uid://dsm3u5hx6gyxw" path="res://Waitress.tscn" id="3_qjl7a"]
 [ext_resource type="Texture2D" uid="uid://cxidyrss8tlij" path="res://Assets/Objects/Tablet/TabletExit.png" id="3_y3lsr"]
-[ext_resource type="Script" uid="uid://6mgo1ge1roms" path="res://customer_1.gd" id="4_j7tw7"]
 [ext_resource type="Script" uid="uid://c8r6avs0p7fi2" path="res://tablet_exit.gd" id="4_l7hfk"]
-[ext_resource type="Texture2D" uid="uid://c3i8ypdr5i3kq" path="res://Assets/Characters/Old Woman.png" id="5_ery3x"]
+[ext_resource type="PackedScene" uid="uid://bfsx4o0vpwy15" path="res://Vet.tscn" id="4_y3lsr"]
 [ext_resource type="Material" uid="uid://bhki8ferbtk7q" path="res://Assets/Objects/Tablet/TabletScreenMaterial.tres" id="5_j7tw7"]
+[ext_resource type="PackedScene" uid="uid://buwxeek7eqwbh" path="res://PunkDude.tscn" id="5_l7hfk"]
 [ext_resource type="Script" uid="uid://wdl2voehkeab" path="res://tablet.gd" id="5_qdtym"]
 [ext_resource type="Texture2D" uid="uid://cw2sok8wmnkyj" path="res://Assets/Objects/Dialogue Box.png" id="6_3n21d"]
-[ext_resource type="Texture2D" uid="uid://blhx206b11j1j" path="res://Assets/Characters/Gym Dude.PNG" id="6_7a0sr"]
-[ext_resource type="Texture2D" uid="uid://baera860qmnfu" path="res://Assets/Characters/Waitress.png" id="7_nho2r"]
-[ext_resource type="Texture2D" uid="uid://dmuicyo77yos1" path="res://Assets/Characters/Punk Dude.PNG" id="8_npf87"]
 [ext_resource type="Texture2D" uid="uid://2kxjdkirf4m7" path="res://Assets/Backgrounds/Pet Area Background.png" id="11_elsv7"]
+[ext_resource type="FontFile" uid="uid://4qahmub48x6" path="res://Assets/Fonts/Fredoka-VariableFont_wdth,wght.ttf" id="17_cnf0e"]
 [ext_resource type="AudioStream" uid="uid://dlim5lnmksff3" path="res://Assets/Sound/MaleCustomerVoice.mp3" id="17_titoq"]
 [ext_resource type="AudioStream" uid="uid://beegsns2d0jqp" path="res://Assets/Sound/DogSound1.mp3" id="18_l70ls"]
 [ext_resource type="AudioStream" uid="uid://oe5w5omydume" path="res://Assets/Sound/DogSound2.mp3" id="19_yyx1d"]
@@ -102,20 +102,26 @@ corner_radius_bottom_left = 4
 corner_detail = 6
 
 [node name="CafeScene" type="Node2D" unique_id=1013386719]
+script = ExtResource("1_nv1sv")
+possible_customers = Array[PackedScene]([ExtResource("2_cnf0e"), ExtResource("3_qjl7a"), ExtResource("4_y3lsr"), ExtResource("5_l7hfk"), ExtResource("2_cnf0e"), ExtResource("4_y3lsr")])
 
-[node name="TabletScreen" type="Sprite2D" parent="." unique_id=845646374]
+[node name="TabletScreen" type="TextureButton" parent="." unique_id=917124920]
 z_index = 200
-position = Vector2(992.00006, 488)
+offset_left = 266.99994
+offset_top = 99.00003
+offset_right = 1803.0
+offset_bottom = 1123.0
 scale = Vector2(0.8989999, 0.8105469)
-texture = ExtResource("1_cnf0e")
+texture_normal = ExtResource("1_cnf0e")
 script = ExtResource("2_qjl7a")
 
 [node name="TabletOverlay" type="ColorRect" parent="TabletScreen" unique_id=826572442]
 z_index = -1
-offset_left = -1112.3472
-offset_top = -602.0626
-offset_right = 1041.157
-offset_bottom = 740.24097
+layout_mode = 0
+offset_left = -302.5584
+offset_top = -129.5422
+offset_right = 1850.9458
+offset_bottom = 1212.7614
 mouse_filter = 2
 color = Color(0, 0, 0, 0.7294118)
 
@@ -144,39 +150,11 @@ position = Vector2(962, 540)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_lvsig")
 
-[node name="Vet" type="Sprite2D" parent="." unique_id=116528777]
-z_index = 5
+[node name="Vet" parent="." unique_id=247340950 groups=["Customer"] instance=ExtResource("4_y3lsr")]
 position = Vector2(1306, 1323)
-scale = Vector2(0.2, 0.204)
-texture = ExtResource("3_3n21d")
-script = ExtResource("4_j7tw7")
-
-[node name="Old Woman" type="Sprite2D" parent="." unique_id=590190577]
-z_index = 5
-position = Vector2(1306, 1460)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("5_ery3x")
-
-[node name="Gym Guy" type="Sprite2D" parent="." unique_id=1065010022]
-z_index = 5
-position = Vector2(1306, 1460)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("6_7a0sr")
-
-[node name="Waitress" type="Sprite2D" parent="." unique_id=1462244154]
-z_index = 5
-position = Vector2(1306, 1460)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("7_nho2r")
-
-[node name="Punk Dude" type="Sprite2D" parent="." unique_id=1890936067]
-z_index = 5
-position = Vector2(1306, 1460)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("8_npf87")
 
 [node name="Tablet" type="SubViewportContainer" parent="." unique_id=1657896802]
-z_index = 2
+z_index = 20
 offset_left = 1386.0
 offset_top = 543.00006
 offset_right = 1898.0
@@ -233,15 +211,22 @@ offset_right = 2373.0
 offset_bottom = 1390.0
 rotation = -0.0044129863
 scale = Vector2(0.5, 0.436)
+mouse_filter = 2
 texture = ExtResource("6_3n21d")
 
 [node name="DialogueLabel" type="Label" parent="DialogueBox" unique_id=857803863]
 layout_mode = 0
-offset_left = 256.54138
-offset_top = 386.13196
-offset_right = 339.54138
-offset_bottom = 409.13196
+offset_left = 281.473
+offset_top = 657.39404
+offset_right = 2092.187
+offset_bottom = 973.3596
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("17_cnf0e")
+theme_override_font_sizes/font_size = 120
 text = "Test Order"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1188352982]
 
@@ -349,6 +334,7 @@ mouse_filter = 2
 color = Color(0, 0, 0, 0.7294118)
 
 [node name="Settings" type="Sprite2D" parent="SettingsPanel" unique_id=1287732666]
+z_index = 10
 position = Vector2(1863.9999, 56)
 scale = Vector2(0.034484845, 0.03356934)
 texture = ExtResource("33_j58bk")
@@ -387,6 +373,7 @@ texture = ExtResource("38_nv1sv")
 script = ExtResource("39_cnf0e")
 
 [node name="Exit" type="Sprite2D" parent="SettingsPanel/OptionContainer" unique_id=766721834]
+z_index = 11
 position = Vector2(1863.9999, 55.999996)
 scale = Vector2(0.015666643, 0.015111111)
 texture = ExtResource("42_l7hfk")
@@ -420,3 +407,5 @@ theme_override_styles/slider = SubResource("StyleBoxFlat_kkvpf")
 min_value = -40.0
 max_value = 0.0
 script = ExtResource("48_eu4b4")
+
+[connection signal="pressed" from="TabletScreen" to="." method="_on_tablet_screen_pressed"]

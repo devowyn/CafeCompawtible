@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Try2"
+config/name="butoble"
 run/main_scene="uid://lk7xgdik0sbp"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"

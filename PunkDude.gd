@@ -3,7 +3,7 @@ extends Sprite2D
 @onready var dialogue_box = $"../DialogueBox" 
 @onready var dialogue_label = $"../DialogueBox/DialogueLabel"
 
-var target_y = 600 
+var target_y = 670 
 var speed = 700
 var has_ordered = false
 var is_leaving = false

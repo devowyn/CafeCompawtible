@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d4cjmnhpi6x4"]
+
+[ext_resource type="Texture2D" uid="uid://blhx206b11j1j" path="res://Assets/Characters/Gym Dude.PNG" id="1_jsxoj"]
+[ext_resource type="Script" uid="uid://bwfa1fuef5ox0" path="res://GymGuy.gd" id="2_pss51"]
+
+[node name="Gym Guy" type="Sprite2D" unique_id=694655393 groups=["Customer"]]
+z_index = 5
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_jsxoj")
+script = ExtResource("2_pss51")

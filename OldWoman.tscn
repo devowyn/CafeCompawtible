@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dkyuv1dt3gw3r"]
+
+[ext_resource type="Texture2D" uid="uid://c3i8ypdr5i3kq" path="res://Assets/Characters/Old Woman.png" id="1_y74tw"]
+[ext_resource type="Script" uid="uid://yadvbvjk5upx" path="res://OldWoman.gd" id="2_ynnr0"]
+
+[node name="Old Woman" type="Sprite2D" unique_id=527084690 groups=["Customer"]]
+z_index = 5
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_y74tw")
+script = ExtResource("2_ynnr0")
