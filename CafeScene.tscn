@@ -341,14 +341,16 @@ z_index = 100
 script = ExtResource("29_nho2r")
 
 [node name="Overlay" type="ColorRect" parent="SettingsPanel" unique_id=1330131851]
-offset_right = 1928.0
-offset_bottom = 1080.0
+offset_left = 8.0
+offset_top = -8.0
+offset_right = 1936.0
+offset_bottom = 1072.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0.7294118)
 
 [node name="Settings" type="Sprite2D" parent="SettingsPanel" unique_id=1287732666]
-position = Vector2(1842, 71.249985)
-scale = Vector2(0.053955093, 0.047607433)
+position = Vector2(1863.9999, 56)
+scale = Vector2(0.034484845, 0.03356934)
 texture = ExtResource("33_j58bk")
 script = ExtResource("31_yyx1d")
 
@@ -385,8 +387,8 @@ texture = ExtResource("38_nv1sv")
 script = ExtResource("39_cnf0e")
 
 [node name="Exit" type="Sprite2D" parent="SettingsPanel/OptionContainer" unique_id=766721834]
-position = Vector2(1841.5, 72.00001)
-scale = Vector2(0.024222173, 0.021333333)
+position = Vector2(1863.9999, 55.999996)
+scale = Vector2(0.015666643, 0.015111111)
 texture = ExtResource("42_l7hfk")
 script = ExtResource("43_qdtym")
 
