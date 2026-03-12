@@ -139,32 +139,38 @@ scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_j7tw7")
 
 [node name="Counter" type="Sprite2D" parent="." unique_id=1504024012]
+z_index = 19
 position = Vector2(962, 540)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_lvsig")
 
 [node name="Vet" type="Sprite2D" parent="." unique_id=116528777]
+z_index = 5
 position = Vector2(1306, 1323)
 scale = Vector2(0.2, 0.204)
 texture = ExtResource("3_3n21d")
 script = ExtResource("4_j7tw7")
 
 [node name="Old Woman" type="Sprite2D" parent="." unique_id=590190577]
+z_index = 5
 position = Vector2(1306, 1460)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("5_ery3x")
 
 [node name="Gym Guy" type="Sprite2D" parent="." unique_id=1065010022]
+z_index = 5
 position = Vector2(1306, 1460)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("6_7a0sr")
 
 [node name="Waitress" type="Sprite2D" parent="." unique_id=1462244154]
+z_index = 5
 position = Vector2(1306, 1460)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_nho2r")
 
 [node name="Punk Dude" type="Sprite2D" parent="." unique_id=1890936067]
+z_index = 5
 position = Vector2(1306, 1460)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("8_npf87")
