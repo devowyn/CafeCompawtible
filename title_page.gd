@@ -1,13 +1,14 @@
 extends Sprite2D
 
-@onready var settings_btn = $"../SettingsPanel/Settings"
+@onready var settings_panel = get_parent().get_node("SettingsPanel")
 
 func _ready():
-	set_process_unhandled_input(true)
-	settings_btn.visible = false
+	set_process_input(true)
 
-func _unhandled_input(event):
+func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			visible = false
-			settings_btn.visible = true
+			if visible:
+				visible = false
+				settings_panel.get_node("Settings").visible = true
+				get_viewport().set_input_as_handled()

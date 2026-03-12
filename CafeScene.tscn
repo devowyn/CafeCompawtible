@@ -127,7 +127,6 @@ texture = ExtResource("3_y3lsr")
 script = ExtResource("4_l7hfk")
 
 [node name="TitlePage" type="Sprite2D" parent="." unique_id=1986128879]
-visible = false
 z_index = 99
 position = Vector2(959, 532.00006)
 scale = Vector2(1.0010418, 0.9851853)

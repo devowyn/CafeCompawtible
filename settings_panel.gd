@@ -22,10 +22,9 @@ func _ready():
 	option_container.visible = false
 	overlay.visible = false
 	music_off_btn.visible = false
-	music_on_btn.visible = true
-	mute_btn.visible = false
-	unmute_btn.visible = true
+	unmute_btn.visible = false
 	exit_btn.visible = false
+	settings_btn.visible = false 
 
 func toggle_panel():
 	if tween:
