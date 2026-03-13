@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bgmlnpskyfowb"]
+
+[ext_resource type="AudioStream" uid="uid://d2vd1e4qey81h" path="res://Assets/Sound/CafeSoundtrack.mp3" id="1_fvyft"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" unique_id=439633309]
+stream = ExtResource("1_fvyft")
+autoplay = true

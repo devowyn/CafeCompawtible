@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://b2gxip8hmeex0"]
+
+[ext_resource type="Script" uid="uid://bfs14m3ct24mj" path="res://pet_area.gd" id="1_1tl7t"]
+[ext_resource type="Texture2D" uid="uid://2kxjdkirf4m7" path="res://Assets/Backgrounds/Pet Area Background.png" id="1_wcmlm"]
+[ext_resource type="Texture2D" uid="uid://tvm1khek5xrd" path="res://Assets/Pets/Cat Pose 3.PNG" id="3_bmc21"]
+[ext_resource type="Texture2D" uid="uid://d2k38lmd77rwv" path="res://Assets/Pets/Cat Pose 1.PNG" id="3_lc3cb"]
+[ext_resource type="Texture2D" uid="uid://b83174kh4ehkw" path="res://Assets/Pets/Cat Pose 2.PNG" id="3_wg07w"]
+[ext_resource type="Texture2D" uid="uid://bs4w1mko4tkdt" path="res://Assets/Pets/Dog Pose 3.PNG" id="4_bmc21"]
+[ext_resource type="Texture2D" uid="uid://fmkp5n60exp2" path="res://Assets/Pets/Dog Pose 1.PNG" id="5_58m80"]
+[ext_resource type="FontFile" uid="uid://4qahmub48x6" path="res://Assets/Fonts/Fredoka-VariableFont_wdth,wght.ttf" id="6_58m80"]
+[ext_resource type="Texture2D" uid="uid://tad34kc185c" path="res://Assets/Pets/Dog Pose 2.PNG" id="6_je8hs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wg07w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_je8hs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3rjgh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bmw1e"]
+
+[node name="PetArea" type="Node2D" unique_id=1707613671]
+script = ExtResource("1_1tl7t")
+cat_base = ExtResource("3_lc3cb")
+cat_pose_1 = ExtResource("3_wg07w")
+cat_pose_2 = ExtResource("3_bmc21")
+dog_base = ExtResource("4_bmc21")
+dog_pose_1 = ExtResource("6_je8hs")
+dog_pose_2 = ExtResource("5_58m80")
+
+[node name="ZoomPanel" type="ColorRect" parent="." unique_id=1493441499]
+z_index = 1
+offset_left = -3.0
+offset_top = -1.0
+offset_right = 1925.0
+offset_bottom = 1079.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="BigPetDisplay" type="TextureRect" parent="ZoomPanel" unique_id=1788909128]
+z_index = 100
+layout_mode = 0
+offset_left = -29.0
+offset_top = -100.0
+offset_right = 1943.0
+offset_bottom = 1334.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ChooseButton" type="Button" parent="ZoomPanel" unique_id=959243316]
+layout_mode = 0
+offset_left = 502.0
+offset_top = 135.0
+offset_right = 899.0
+offset_bottom = 290.0
+theme_override_fonts/font = ExtResource("6_58m80")
+theme_override_font_sizes/font_size = 70
+text = "Choose"
+
+[node name="PetButton" type="Button" parent="ZoomPanel" unique_id=1037379062]
+layout_mode = 0
+offset_left = 1124.0
+offset_top = 134.0
+offset_right = 1521.0
+offset_bottom = 289.0
+theme_override_fonts/font = ExtResource("6_58m80")
+theme_override_font_sizes/font_size = 70
+text = "Pet"
+
+[node name="InvisibleShield" type="ColorRect" parent="." unique_id=114517162]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1084.0
+color = Color(1, 1, 1, 0)
+metadata/_edit_lock_ = true
+
+[node name="Pet Area Background" type="Sprite2D" parent="." unique_id=263346672]
+position = Vector2(956, 540)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_wcmlm")
+metadata/_edit_lock_ = true
+
+[node name="Cat" type="Sprite2D" parent="." unique_id=1245301228]
+position = Vector2(621, 778.00006)
+scale = Vector2(0.3768921, 0.35872376)
+texture = ExtResource("3_lc3cb")
+
+[node name="Dog" type="Sprite2D" parent="." unique_id=1506770782]
+position = Vector2(1251.0001, 733)
+scale = Vector2(0.45996094, 0.45996094)
+texture = ExtResource("4_bmc21")
+
+[node name="BackButton" type="Button" parent="." unique_id=658203397]
+offset_left = -2.0
+offset_top = 251.0
+offset_right = 88.0
+offset_bottom = 321.0
+text = "Cafe"
+
+[node name="CatClickZone" type="Button" parent="." unique_id=798680565]
+offset_left = 441.0
+offset_top = 594.0
+offset_right = 836.0
+offset_bottom = 893.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wg07w")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_je8hs")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3rjgh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bmw1e")
+
+[node name="DogClickZone" type="Button" parent="." unique_id=101252082]
+offset_left = 981.0
+offset_top = 554.0
+offset_right = 1496.0
+offset_bottom = 891.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wg07w")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_je8hs")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3rjgh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bmw1e")
+
+[connection signal="pressed" from="ZoomPanel/ChooseButton" to="." method="_on_choose_button_pressed"]
+[connection signal="pressed" from="ZoomPanel/PetButton" to="." method="_on_pet_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="CatClickZone" to="." method="_on_cat_click_zone_pressed"]
+[connection signal="pressed" from="DogClickZone" to="." method="_on_dog_click_zone_pressed"]

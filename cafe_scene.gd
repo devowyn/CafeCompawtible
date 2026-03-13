@@ -40,3 +40,7 @@ func spawn_next_customer():
 
 func _on_tablet_screen_pressed() -> void:
 	pass # Replace with function body.
+
+
+func _on_go_to_pet_area_button_pressed():
+	$PetArea.show() # This rolls the curtain down!
