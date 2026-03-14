@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bfsx4o0vpwy15"]
 
 [ext_resource type="Texture2D" uid="uid://bucp837l3ir34" path="res://Assets/Characters/Vet.PNG" id="1_qpx13"]
-[ext_resource type="Script" uid="uid://6mgo1ge1roms" path="res://customer_1.gd" id="2_72bpb"]
+[ext_resource type="Script" uid="uid://dbot7wqs7cgkm" path="res://universal_customer.gd" id="2_qpx13"]
 
 [node name="Vet" type="Sprite2D" unique_id=470293902 groups=["Customer"]]
 z_index = 5
 scale = Vector2(0.2, 0.204)
 texture = ExtResource("1_qpx13")
-script = ExtResource("2_72bpb")
+script = ExtResource("2_qpx13")

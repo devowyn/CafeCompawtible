@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b1h4d2e5fhdk4"]
+
+[ext_resource type="Texture2D" uid="uid://cxcjul4q6fsy1" path="res://Assets/Characters/Old Dude.PNG" id="1_u5566"]
+[ext_resource type="Script" uid="uid://dbot7wqs7cgkm" path="res://universal_customer.gd" id="2_oslnl"]
+[ext_resource type="Texture2D" uid="uid://brsuv4ycsa2d4" path="res://Assets/Character expressions/Sad_Business_Guy.png" id="3_88ad7"]
+[ext_resource type="Texture2D" uid="uid://b3rjw0kdjtm4x" path="res://Assets/Character expressions/RBF_BusinessGuy.png" id="4_we1fw"]
+
+[node name="OldDude" type="Sprite2D" unique_id=1848895581 groups=["Customer"]]
+texture = ExtResource("1_u5566")
+script = ExtResource("2_oslnl")
+happy_face = ExtResource("1_u5566")
+sad_face = ExtResource("3_88ad7")
+rbf_face = ExtResource("4_we1fw")

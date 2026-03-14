@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://buwxeek7eqwbh"]
 
 [ext_resource type="Texture2D" uid="uid://dmuicyo77yos1" path="res://Assets/Characters/Punk Dude.PNG" id="1_q0we5"]
-[ext_resource type="Script" uid="uid://b1thlil82yk3s" path="res://PunkDude.gd" id="2_cmvnp"]
+[ext_resource type="Script" uid="uid://dbot7wqs7cgkm" path="res://universal_customer.gd" id="2_q0we5"]
+[ext_resource type="Texture2D" uid="uid://b4sw4l0qk3m60" path="res://Assets/Character expressions/Happy_Punk.png" id="3_gtupd"]
+[ext_resource type="Texture2D" uid="uid://d1tt5sf37nycj" path="res://Assets/Character expressions/Sad_Punk.png" id="4_uoitt"]
 
 [node name="Punk Dude" type="Sprite2D" unique_id=1482340908 groups=["Customer"]]
 z_index = 5
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_q0we5")
-script = ExtResource("2_cmvnp")
+script = ExtResource("2_q0we5")
+happy_face = ExtResource("3_gtupd")
+sad_face = ExtResource("4_uoitt")
+rbf_face = ExtResource("1_q0we5")

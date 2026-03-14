@@ -2,76 +2,43 @@
 
 [ext_resource type="Script" uid="uid://bfs14m3ct24mj" path="res://pet_area.gd" id="1_1tl7t"]
 [ext_resource type="Texture2D" uid="uid://2kxjdkirf4m7" path="res://Assets/Backgrounds/Pet Area Background.png" id="1_wcmlm"]
-[ext_resource type="Texture2D" uid="uid://tvm1khek5xrd" path="res://Assets/Pets/Cat Pose 3.PNG" id="3_bmc21"]
-[ext_resource type="Texture2D" uid="uid://d2k38lmd77rwv" path="res://Assets/Pets/Cat Pose 1.PNG" id="3_lc3cb"]
-[ext_resource type="Texture2D" uid="uid://b83174kh4ehkw" path="res://Assets/Pets/Cat Pose 2.PNG" id="3_wg07w"]
-[ext_resource type="Texture2D" uid="uid://bs4w1mko4tkdt" path="res://Assets/Pets/Dog Pose 3.PNG" id="4_bmc21"]
-[ext_resource type="Texture2D" uid="uid://fmkp5n60exp2" path="res://Assets/Pets/Dog Pose 1.PNG" id="5_58m80"]
+[ext_resource type="Texture2D" uid="uid://cw2sok8wmnkyj" path="res://Assets/Objects/Dialogue Box.png" id="4_lc3cb"]
+[ext_resource type="Texture2D" uid="uid://jdesjbmq533d" path="res://Assets/Pets/Excited Dog/1.png" id="5_je8hs"]
+[ext_resource type="Script" uid="uid://cn4rrkcqntq5s" path="res://pet_animator.gd" id="6_3rjgh"]
 [ext_resource type="FontFile" uid="uid://4qahmub48x6" path="res://Assets/Fonts/Fredoka-VariableFont_wdth,wght.ttf" id="6_58m80"]
-[ext_resource type="Texture2D" uid="uid://tad34kc185c" path="res://Assets/Pets/Dog Pose 2.PNG" id="6_je8hs"]
+[ext_resource type="Texture2D" uid="uid://dgatu1vvmnl2l" path="res://3288610.jpg" id="7_2caa4"]
+[ext_resource type="Texture2D" uid="uid://c4jm3lomdwpta" path="res://Assets/Pets/Excited Dog/2.png" id="7_bmw1e"]
+[ext_resource type="Texture2D" uid="uid://ddurfh7c6jl2d" path="res://Assets/Pets/Excited Dog/3.png" id="8_5j7e5"]
+[ext_resource type="Texture2D" uid="uid://bm5ne7s7sv1iu" path="res://Assets/Pets/Excited Dog/4.png" id="9_n2v8u"]
+[ext_resource type="Texture2D" uid="uid://dnqydmuxuvk1e" path="res://Assets/Pets/Shy Cat/1.png" id="10_5j7e5"]
+[ext_resource type="Texture2D" uid="uid://vm3muasjn58s" path="res://Assets/Pets/Curious Cat/1.png" id="11_5cx7u"]
+[ext_resource type="Texture2D" uid="uid://1oyvuapi8qwr" path="res://Assets/Pets/Shy Cat/3.png" id="11_n2v8u"]
+[ext_resource type="Script" uid="uid://dxahu1v1q5ie2" path="res://curious_cat.gd" id="12_gka04"]
+[ext_resource type="Texture2D" uid="uid://bpds08xhkv483" path="res://Assets/Pets/Shy Cat/4.png" id="12_y2m5u"]
+[ext_resource type="Texture2D" uid="uid://dpggr1vsmo6jm" path="res://Assets/Pets/Curious Cat/2.png" id="13_7tgcw"]
+[ext_resource type="Texture2D" uid="uid://ctc30k7tmpvjn" path="res://Assets/Pets/Playful Cat/1.png" id="13_etdvu"]
+[ext_resource type="Texture2D" uid="uid://dj8mdel0uqy87" path="res://Assets/Pets/Curious Cat/3.png" id="14_855xv"]
+[ext_resource type="Texture2D" uid="uid://cdnjw778s7yg5" path="res://Assets/Pets/Playful Cat/2.png" id="14_n3n3r"]
+[ext_resource type="Texture2D" uid="uid://npxy56ighltw" path="res://Assets/Pets/Playful Cat/3.png" id="15_1wn7r"]
+[ext_resource type="Texture2D" uid="uid://c2x206i2bo5ve" path="res://Assets/Pets/Curious Cat/4.png" id="15_ngaki"]
+[ext_resource type="Texture2D" uid="uid://b36su5sn8os6" path="res://Assets/Pets/Playful Cat/4.png" id="16_1e4tb"]
+[ext_resource type="Texture2D" uid="uid://l1vyl8vkquw5" path="res://Assets/Pets/Curious Cat/5.png" id="16_8tljb"]
+[ext_resource type="Texture2D" uid="uid://bdpqy5kbififc" path="res://Assets/Pets/Shy Dog/1.png" id="17_5q2ub"]
+[ext_resource type="Texture2D" uid="uid://bw3duarsc6frw" path="res://Assets/Pets/Curious Cat/6.png" id="17_lsjgu"]
+[ext_resource type="Texture2D" uid="uid://cbk8vfpmfo2r" path="res://Assets/Pets/Shy Dog/2.png" id="18_2caa4"]
+[ext_resource type="Texture2D" uid="uid://c5wbviox3dni0" path="res://Assets/Pets/Protective Dog/1.png" id="18_ane2i"]
+[ext_resource type="Texture2D" uid="uid://ejrpbvudm0e3" path="res://Assets/Pets/Shy Dog/3.png" id="19_wqfmp"]
+[ext_resource type="Script" uid="uid://c2wo21sogu8uu" path="res://protective_dog.gd" id="19_yd5k6"]
+[ext_resource type="Texture2D" uid="uid://ddjqmq00cqtfi" path="res://Assets/Pets/Protective Dog/2.png" id="20_iq5kb"]
+[ext_resource type="Texture2D" uid="uid://cvtwq65uuolyc" path="res://Assets/Pets/Shy Dog/4.png" id="20_sq8xx"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wg07w"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5j7e5"]
+load_path = "res://.godot/imported/1.png-7af80021b8a3dc59d71d1dd7562a1911.ctex"
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_je8hs"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3rjgh"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bmw1e"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5q2ub"]
 
 [node name="PetArea" type="Node2D" unique_id=1707613671]
 script = ExtResource("1_1tl7t")
-cat_base = ExtResource("3_lc3cb")
-cat_pose_1 = ExtResource("3_wg07w")
-cat_pose_2 = ExtResource("3_bmc21")
-dog_base = ExtResource("4_bmc21")
-dog_pose_1 = ExtResource("6_je8hs")
-dog_pose_2 = ExtResource("5_58m80")
-
-[node name="ZoomPanel" type="ColorRect" parent="." unique_id=1493441499]
-z_index = 1
-offset_left = -3.0
-offset_top = -1.0
-offset_right = 1925.0
-offset_bottom = 1079.0
-mouse_filter = 2
-color = Color(0, 0, 0, 0.39215687)
-
-[node name="BigPetDisplay" type="TextureRect" parent="ZoomPanel" unique_id=1788909128]
-z_index = 100
-layout_mode = 0
-offset_left = -29.0
-offset_top = -100.0
-offset_right = 1943.0
-offset_bottom = 1334.0
-expand_mode = 1
-stretch_mode = 5
-
-[node name="ChooseButton" type="Button" parent="ZoomPanel" unique_id=959243316]
-layout_mode = 0
-offset_left = 502.0
-offset_top = 135.0
-offset_right = 899.0
-offset_bottom = 290.0
-theme_override_fonts/font = ExtResource("6_58m80")
-theme_override_font_sizes/font_size = 70
-text = "Choose"
-
-[node name="PetButton" type="Button" parent="ZoomPanel" unique_id=1037379062]
-layout_mode = 0
-offset_left = 1124.0
-offset_top = 134.0
-offset_right = 1521.0
-offset_bottom = 289.0
-theme_override_fonts/font = ExtResource("6_58m80")
-theme_override_font_sizes/font_size = 70
-text = "Pet"
-
-[node name="InvisibleShield" type="ColorRect" parent="." unique_id=114517162]
-visible = false
-offset_right = 1920.0
-offset_bottom = 1084.0
-color = Color(1, 1, 1, 0)
-metadata/_edit_lock_ = true
 
 [node name="Pet Area Background" type="Sprite2D" parent="." unique_id=263346672]
 position = Vector2(956, 540)
@@ -79,45 +46,188 @@ scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_wcmlm")
 metadata/_edit_lock_ = true
 
-[node name="Cat" type="Sprite2D" parent="." unique_id=1245301228]
-position = Vector2(621, 778.00006)
-scale = Vector2(0.3768921, 0.35872376)
-texture = ExtResource("3_lc3cb")
+[node name="CustomerDisplay" type="Sprite2D" parent="." unique_id=1325557283]
+position = Vector2(244, 812.99994)
+scale = Vector2(0.26437196, 0.2541774)
+texture = ExtResource("7_2caa4")
+flip_h = true
 
-[node name="Dog" type="Sprite2D" parent="." unique_id=1506770782]
-position = Vector2(1251.0001, 733)
-scale = Vector2(0.45996094, 0.45996094)
-texture = ExtResource("4_bmc21")
+[node name="DialogueBox" type="Sprite2D" parent="." unique_id=892948021]
+position = Vector2(929, 175)
+scale = Vector2(0.4916159, 0.49161577)
+texture = ExtResource("4_lc3cb")
+flip_h = true
 
-[node name="BackButton" type="Button" parent="." unique_id=658203397]
-offset_left = -2.0
-offset_top = 251.0
-offset_right = 88.0
-offset_bottom = 321.0
-text = "Cafe"
+[node name="CustomerRequestLabel" type="Label" parent="DialogueBox" unique_id=1001402082]
+anchors_preset = -1
+anchor_right = 0.50457543
+anchor_bottom = 0.13672072
+offset_left = -937.52637
+offset_top = -177.2973
+offset_right = -242.52637
+offset_bottom = -52.297302
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_58m80")
+theme_override_font_sizes/font_size = 100
+text = "buto text
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="CatClickZone" type="Button" parent="." unique_id=798680565]
-offset_left = 441.0
-offset_top = 594.0
-offset_right = 836.0
-offset_bottom = 893.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_wg07w")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_je8hs")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_3rjgh")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_bmw1e")
+[node name="Animations" type="Sprite2D" parent="." unique_id=1682804770]
+script = ExtResource("6_3rjgh")
 
-[node name="DogClickZone" type="Button" parent="." unique_id=101252082]
-offset_left = 981.0
-offset_top = 554.0
-offset_right = 1496.0
-offset_bottom = 891.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_wg07w")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_je8hs")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_3rjgh")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_bmw1e")
+[node name="Curious Cat" type="Sprite2D" parent="." unique_id=922050175]
+position = Vector2(679.1875, 636.8126)
+scale = Vector2(0.13848872, 0.13848872)
+texture = ExtResource("11_5cx7u")
+script = ExtResource("12_gka04")
+base_image = ExtResource("11_5cx7u")
+emotion_frames = Array[Texture2D]([ExtResource("11_5cx7u"), ExtResource("13_7tgcw"), ExtResource("14_855xv"), ExtResource("15_ngaki"), ExtResource("16_8tljb"), ExtResource("17_lsjgu")])
+time_between_frames = 0.1
 
-[connection signal="pressed" from="ZoomPanel/ChooseButton" to="." method="_on_choose_button_pressed"]
-[connection signal="pressed" from="ZoomPanel/PetButton" to="." method="_on_pet_button_pressed"]
-[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="CatClickZone" to="." method="_on_cat_click_zone_pressed"]
-[connection signal="pressed" from="DogClickZone" to="." method="_on_dog_click_zone_pressed"]
+[node name="Curious Cat Button" type="Button" parent="Curious Cat" unique_id=1646349409]
+offset_left = -716.2134
+offset_top = -872.364
+offset_right = 735.16797
+offset_bottom = 831.74536
+flat = true
+
+[node name="Excited Dog" type="Sprite2D" parent="." unique_id=1876389110]
+position = Vector2(1064, 578)
+scale = Vector2(0.13903807, 0.13903807)
+texture = ExtResource("5_je8hs")
+script = ExtResource("6_3rjgh")
+base_image = ExtResource("5_je8hs")
+emotion_frames = Array[Texture2D]([SubResource("CompressedTexture2D_5j7e5"), ExtResource("7_bmw1e"), ExtResource("8_5j7e5"), ExtResource("9_n2v8u")])
+time_between_frames = 0.2
+
+[node name="Excited Dog Button" type="Button" parent="Excited Dog" unique_id=1388115965]
+offset_left = -934.9956
+offset_top = -618.53564
+offset_right = 1006.91895
+offset_bottom = 747.9966
+flat = true
+
+[node name="Shy Cat" type="Sprite2D" parent="." unique_id=11767566]
+position = Vector2(598, 399.00003)
+scale = Vector2(0.100097686, 0.100097686)
+texture = ExtResource("10_5j7e5")
+script = ExtResource("6_3rjgh")
+base_image = ExtResource("10_5j7e5")
+emotion_frames = Array[Texture2D]([ExtResource("10_5j7e5"), ExtResource("11_n2v8u"), ExtResource("12_y2m5u")])
+time_between_frames = 0.4
+
+[node name="Shy Cat Button" type="Button" parent="Shy Cat" unique_id=165483044]
+offset_left = -749.26807
+offset_top = -509.50244
+offset_right = 699.3169
+offset_bottom = 619.39453
+flat = true
+
+[node name="Playful Cat" type="Sprite2D" parent="." unique_id=894681450]
+position = Vector2(1444, 436.00003)
+scale = Vector2(0.1451874, 0.1451874)
+texture = ExtResource("13_etdvu")
+script = ExtResource("6_3rjgh")
+base_image = ExtResource("13_etdvu")
+emotion_frames = Array[Texture2D]([ExtResource("13_etdvu"), ExtResource("14_n3n3r"), ExtResource("15_1wn7r"), ExtResource("16_1e4tb")])
+time_between_frames = 0.3
+
+[node name="Playful Cat Button" type="Button" parent="Playful Cat" unique_id=1092367950]
+offset_left = -764.5293
+offset_top = -289.2815
+offset_right = 867.84375
+offset_bottom = 633.6636
+flat = true
+
+[node name="Shy Dog" type="Sprite2D" parent="." unique_id=154809208]
+position = Vector2(1236, 867)
+scale = Vector2(0.1682949, 0.1682949)
+texture = ExtResource("17_5q2ub")
+script = ExtResource("6_3rjgh")
+base_image = ExtResource("17_5q2ub")
+emotion_frames = Array[Texture2D]([ExtResource("17_5q2ub"), ExtResource("18_2caa4"), ExtResource("19_wqfmp"), ExtResource("20_sq8xx")])
+
+[node name="Shy Dog Button" type="Button" parent="Shy Dog" unique_id=720628360]
+offset_left = -932.88617
+offset_top = -677.3824
+offset_right = 950.71246
+offset_bottom = 617.9628
+flat = true
+
+[node name="Protective Dog" type="Sprite2D" parent="." unique_id=828999975]
+position = Vector2(855, 893.99994)
+scale = Vector2(0.22021481, 0.22021481)
+texture = ExtResource("18_ane2i")
+flip_h = true
+script = ExtResource("19_yd5k6")
+base_image = ExtResource("18_ane2i")
+emotion_frames = Array[Texture2D]([ExtResource("20_iq5kb"), ExtResource("18_ane2i")])
+
+[node name="Protective Dog Button" type="Button" parent="Protective Dog" unique_id=779695235]
+offset_left = -422.3147
+offset_top = -567.62726
+offset_right = 740.18677
+offset_bottom = 622.12006
+flat = true
+
+[node name="ConfirmPanel" type="Panel" parent="." unique_id=253175345]
+visible = false
+offset_left = -6.0
+offset_top = -21.0
+offset_right = 2138.0
+offset_bottom = 1257.0
+
+[node name="Label" type="Label" parent="ConfirmPanel" unique_id=1369620428]
+layout_mode = 0
+offset_left = 574.0
+offset_top = 87.0
+offset_right = 1411.0
+offset_bottom = 281.0
+theme_override_fonts/font = ExtResource("6_58m80")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_5q2ub")
+text = "Choose this pet?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="YesButton" type="Button" parent="ConfirmPanel" unique_id=1034957309]
+z_index = 1
+layout_mode = 0
+offset_left = 1094.0
+offset_top = 786.0
+offset_right = 1374.0
+offset_bottom = 906.0
+theme_override_font_sizes/font_size = 90
+text = "Yes"
+
+[node name="NoButton" type="Button" parent="ConfirmPanel" unique_id=1899219766]
+z_index = 1
+layout_mode = 0
+offset_left = 569.0
+offset_top = 786.0
+offset_right = 849.0
+offset_bottom = 906.0
+theme_override_font_sizes/font_size = 90
+text = "No"
+
+[node name="PetPreview" type="TextureRect" parent="ConfirmPanel" unique_id=1300012747]
+layout_mode = 0
+offset_left = 674.0
+offset_top = 220.0
+offset_right = 1303.0
+offset_bottom = 849.0
+mouse_filter = 2
+expand_mode = 1
+
+[connection signal="pressed" from="Curious Cat/Curious Cat Button" to="." method="_on_curious_cat_button_pressed"]
+[connection signal="pressed" from="Excited Dog/Excited Dog Button" to="." method="_on_excited_dog_button_pressed"]
+[connection signal="pressed" from="Shy Cat/Shy Cat Button" to="." method="_on_shy_cat_button_pressed"]
+[connection signal="pressed" from="Playful Cat/Playful Cat Button" to="." method="_on_playful_cat_button_pressed"]
+[connection signal="pressed" from="Shy Dog/Shy Dog Button" to="." method="_on_shy_dog_button_pressed"]
+[connection signal="pressed" from="Protective Dog/Protective Dog Button" to="." method="_on_protective_dog_button_pressed"]
+[connection signal="pressed" from="ConfirmPanel/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="ConfirmPanel/NoButton" to="." method="_on_no_button_pressed"]
