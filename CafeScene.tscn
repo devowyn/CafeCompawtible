@@ -16,7 +16,6 @@
 [ext_resource type="Script" uid="uid://wdl2voehkeab" path="res://tablet.gd" id="5_qdtym"]
 [ext_resource type="Texture2D" uid="uid://cw2sok8wmnkyj" path="res://Assets/Objects/Dialogue Box.png" id="6_3n21d"]
 [ext_resource type="PackedScene" uid="uid://b2gxip8hmeex0" path="res://pet_area.tscn" id="6_eu4b4"]
-[ext_resource type="Script" uid="uid://dbot7wqs7cgkm" path="res://universal_customer.gd" id="15_eu4b4"]
 [ext_resource type="FontFile" uid="uid://4qahmub48x6" path="res://Assets/Fonts/Fredoka-VariableFont_wdth,wght.ttf" id="17_cnf0e"]
 [ext_resource type="AudioStream" uid="uid://dlim5lnmksff3" path="res://Assets/Sound/MaleCustomerVoice.mp3" id="17_titoq"]
 [ext_resource type="AudioStream" uid="uid://beegsns2d0jqp" path="res://Assets/Sound/DogSound1.mp3" id="18_l70ls"]
@@ -48,6 +47,7 @@
 [ext_resource type="Script" uid="uid://bsfwm3ujvhi1d" path="res://x.gd" id="45_q6c3r"]
 [ext_resource type="Script" uid="uid://dupksfu2ddbg4" path="res://volume_slider.gd" id="47_jtd2m"]
 [ext_resource type="Script" uid="uid://ciaa1gqjthgxu" path="res://volume_slider_sfx.gd" id="48_eu4b4"]
+[ext_resource type="PackedScene" uid="uid://qro3wi6asvm1" path="res://pet_area_fake.tscn" id="48_t2dou"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_3n21d"]
 
@@ -114,10 +114,6 @@ possible_customers = Array[PackedScene]([ExtResource("2_cnf0e"), ExtResource("3_
 [node name="PetArea" parent="." unique_id=1707613671 instance=ExtResource("6_eu4b4")]
 visible = false
 z_index = 50
-shy_cat_pic = null
-playful_cat_pic = null
-shy_dog_pic = null
-excited_dog_pic = null
 
 [node name="TabletScreen" type="TextureButton" parent="." unique_id=917124920]
 visible = false
@@ -217,12 +213,6 @@ texture = ExtResource("1_lvsig")
 
 [node name="Vet" parent="." unique_id=247340950 instance=ExtResource("4_y3lsr")]
 position = Vector2(1306, 1323)
-script = ExtResource("15_eu4b4")
-walk_speed = 700.0
-target_y = 670.0
-happy_face = null
-sad_face = null
-rbf_face = null
 
 [node name="Tablet" type="SubViewportContainer" parent="." unique_id=1657896802]
 z_index = 20
@@ -445,6 +435,17 @@ min_value = -40.0
 max_value = 0.0
 script = ExtResource("48_eu4b4")
 
+[node name="PetAreaFake" parent="." unique_id=2146015937 instance=ExtResource("48_t2dou")]
+process_mode = 3
+visible = false
+z_index = 100
+
+[node name="Go To Fake Area Button" type="Button" parent="." unique_id=154174801]
+offset_left = 1829.0
+offset_top = 288.0
+offset_right = 1916.0
+offset_bottom = 353.0
+
 [connection signal="pressed" from="TabletScreen" to="." method="_on_tablet_screen_pressed"]
 [connection signal="pressed" from="TabletScreen/Pawfee Button" to="." method="_on_pawfee_button_pressed"]
 [connection signal="pressed" from="TabletScreen/Meowcha Button" to="." method="_on_meowcha_button_pressed"]
@@ -452,3 +453,4 @@ script = ExtResource("48_eu4b4")
 [connection signal="pressed" from="TabletScreen/Woof Cocoa Button" to="." method="_on_woof_cocoa_button_pressed"]
 [connection signal="pressed" from="TabletScreen/Compawtible Button" to="." method="_on_compawtible_button_pressed"]
 [connection signal="pressed" from="TabletScreen/Tropical Punch Button" to="." method="_on_tropical_punch_button_pressed"]
+[connection signal="pressed" from="Go To Fake Area Button" to="." method="_on_go_to_fake_area_button_pressed"]

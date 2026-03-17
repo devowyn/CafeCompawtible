@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chg3viqkipb3d"
-path="res://.godot/imported/Pet Area Background.png-88eca5ce835d2965206fac9a4f824ec0.ctex"
+uid="uid://bdbvhpocuo0p3"
+path="res://.godot/imported/Pet Area Background.png-4e69631f934eb9c97128c8b30e549896.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Backgrounds/Pet Area Background.png"
-dest_files=["res://.godot/imported/Pet Area Background.png-88eca5ce835d2965206fac9a4f824ec0.ctex"]
+source_file="res://Pet Area Background.png"
+dest_files=["res://.godot/imported/Pet Area Background.png-4e69631f934eb9c97128c8b30e549896.ctex"]
 
 [params]
 

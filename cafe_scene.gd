@@ -86,3 +86,11 @@ func _on_purrfect_frappe_button_pressed():
 
 func _on_tropical_punch_button_pressed():
 	serve_specific_drink("Tail-Wagging Tropical Punch")
+	
+func _on_go_to_fake_area_button_pressed():
+	$PetAreaFake.show()
+	get_tree().paused = true
+
+
+func _on_go_to_fake_area_pressed() -> void:
+	pass # Replace with function body.

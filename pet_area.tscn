@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b2gxip8hmeex0"]
 
 [ext_resource type="Script" uid="uid://bfs14m3ct24mj" path="res://pet_area.gd" id="1_1tl7t"]
-[ext_resource type="Texture2D" uid="uid://2kxjdkirf4m7" path="res://Assets/Backgrounds/Pet Area Background.png" id="1_wcmlm"]
 [ext_resource type="Texture2D" uid="uid://cw2sok8wmnkyj" path="res://Assets/Objects/Dialogue Box.png" id="4_lc3cb"]
 [ext_resource type="Texture2D" uid="uid://jdesjbmq533d" path="res://Assets/Pets/Excited Dog/1.png" id="5_je8hs"]
 [ext_resource type="Script" uid="uid://cn4rrkcqntq5s" path="res://pet_animator.gd" id="6_3rjgh"]
@@ -32,6 +31,9 @@
 [ext_resource type="Texture2D" uid="uid://ddjqmq00cqtfi" path="res://Assets/Pets/Protective Dog/2.png" id="20_iq5kb"]
 [ext_resource type="Texture2D" uid="uid://cvtwq65uuolyc" path="res://Assets/Pets/Shy Dog/4.png" id="20_sq8xx"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ccq8f"]
+load_path = "res://.godot/imported/Pet Area Background.png-3722d0459a2163a115050e1b75e94490.ctex"
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5j7e5"]
 load_path = "res://.godot/imported/1.png-7af80021b8a3dc59d71d1dd7562a1911.ctex"
 
@@ -43,7 +45,7 @@ script = ExtResource("1_1tl7t")
 [node name="Pet Area Background" type="Sprite2D" parent="." unique_id=263346672]
 position = Vector2(956, 540)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("1_wcmlm")
+texture = SubResource("CompressedTexture2D_ccq8f")
 metadata/_edit_lock_ = true
 
 [node name="CustomerDisplay" type="Sprite2D" parent="." unique_id=1325557283]
@@ -96,7 +98,7 @@ offset_bottom = 831.74536
 flat = true
 
 [node name="Excited Dog" type="Sprite2D" parent="." unique_id=1876389110]
-position = Vector2(1064, 578)
+position = Vector2(1000, 529)
 scale = Vector2(0.13903807, 0.13903807)
 texture = ExtResource("5_je8hs")
 script = ExtResource("6_3rjgh")
@@ -105,10 +107,10 @@ emotion_frames = Array[Texture2D]([SubResource("CompressedTexture2D_5j7e5"), Ext
 time_between_frames = 0.2
 
 [node name="Excited Dog Button" type="Button" parent="Excited Dog" unique_id=1388115965]
-offset_left = -934.9956
-offset_top = -618.53564
-offset_right = 1006.91895
-offset_bottom = 747.9966
+offset_left = -877.45746
+offset_top = -661.6893
+offset_right = 1064.457
+offset_bottom = 704.84296
 flat = true
 
 [node name="Shy Cat" type="Sprite2D" parent="." unique_id=11767566]
@@ -144,7 +146,7 @@ offset_bottom = 633.6636
 flat = true
 
 [node name="Shy Dog" type="Sprite2D" parent="." unique_id=154809208]
-position = Vector2(1236, 867)
+position = Vector2(1386, 867)
 scale = Vector2(0.1682949, 0.1682949)
 texture = ExtResource("17_5q2ub")
 script = ExtResource("6_3rjgh")
@@ -152,14 +154,14 @@ base_image = ExtResource("17_5q2ub")
 emotion_frames = Array[Texture2D]([ExtResource("17_5q2ub"), ExtResource("18_2caa4"), ExtResource("19_wqfmp"), ExtResource("20_sq8xx")])
 
 [node name="Shy Dog Button" type="Button" parent="Shy Dog" unique_id=720628360]
-offset_left = -932.88617
-offset_top = -677.3824
-offset_right = 950.71246
-offset_bottom = 617.9628
+offset_left = -831.8729
+offset_top = -570.42725
+offset_right = 1051.7257
+offset_bottom = 724.91797
 flat = true
 
 [node name="Protective Dog" type="Sprite2D" parent="." unique_id=828999975]
-position = Vector2(855, 893.99994)
+position = Vector2(955.99994, 803.99994)
 scale = Vector2(0.22021481, 0.22021481)
 texture = ExtResource("18_ane2i")
 flip_h = true
@@ -168,10 +170,10 @@ base_image = ExtResource("18_ane2i")
 emotion_frames = Array[Texture2D]([ExtResource("20_iq5kb"), ExtResource("18_ane2i")])
 
 [node name="Protective Dog Button" type="Button" parent="Protective Dog" unique_id=779695235]
-offset_left = -422.3147
-offset_top = -567.62726
-offset_right = 740.18677
-offset_bottom = 622.12006
+offset_left = -295.16583
+offset_top = -476.8069
+offset_right = 867.33563
+offset_bottom = 712.9404
 flat = true
 
 [node name="ConfirmPanel" type="Panel" parent="." unique_id=253175345]

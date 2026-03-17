@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://qro3wi6asvm1"]
+
+[ext_resource type="Script" uid="uid://cfdkyvuax36bs" path="res://pet_area_fake.gd" id="1_nxxct"]
+[ext_resource type="Texture2D" uid="uid://vm3muasjn58s" path="res://Assets/Pets/Curious Cat/1.png" id="1_x3y7i"]
+[ext_resource type="Script" uid="uid://dxahu1v1q5ie2" path="res://curious_cat.gd" id="2_nxxct"]
+[ext_resource type="Texture2D" uid="uid://dpggr1vsmo6jm" path="res://Assets/Pets/Curious Cat/2.png" id="3_jws8a"]
+[ext_resource type="Texture2D" uid="uid://dj8mdel0uqy87" path="res://Assets/Pets/Curious Cat/3.png" id="4_0nnjx"]
+[ext_resource type="Texture2D" uid="uid://c2x206i2bo5ve" path="res://Assets/Pets/Curious Cat/4.png" id="5_ca2jv"]
+[ext_resource type="Texture2D" uid="uid://l1vyl8vkquw5" path="res://Assets/Pets/Curious Cat/5.png" id="6_hrdh1"]
+[ext_resource type="Texture2D" uid="uid://bw3duarsc6frw" path="res://Assets/Pets/Curious Cat/6.png" id="7_qpxfo"]
+[ext_resource type="Texture2D" uid="uid://jdesjbmq533d" path="res://Assets/Pets/Excited Dog/1.png" id="8_2s4u2"]
+[ext_resource type="Script" uid="uid://cn4rrkcqntq5s" path="res://pet_animator.gd" id="9_m3faa"]
+[ext_resource type="Texture2D" uid="uid://c4jm3lomdwpta" path="res://Assets/Pets/Excited Dog/2.png" id="10_k1rwa"]
+[ext_resource type="Texture2D" uid="uid://ddurfh7c6jl2d" path="res://Assets/Pets/Excited Dog/3.png" id="11_6er3o"]
+[ext_resource type="Texture2D" uid="uid://bm5ne7s7sv1iu" path="res://Assets/Pets/Excited Dog/4.png" id="12_ux67l"]
+[ext_resource type="Texture2D" uid="uid://dnqydmuxuvk1e" path="res://Assets/Pets/Shy Cat/1.png" id="13_wwtvl"]
+[ext_resource type="Texture2D" uid="uid://1oyvuapi8qwr" path="res://Assets/Pets/Shy Cat/3.png" id="14_nd74l"]
+[ext_resource type="Texture2D" uid="uid://bpds08xhkv483" path="res://Assets/Pets/Shy Cat/4.png" id="15_rgk5b"]
+[ext_resource type="Texture2D" uid="uid://ctc30k7tmpvjn" path="res://Assets/Pets/Playful Cat/1.png" id="16_g0vw6"]
+[ext_resource type="Texture2D" uid="uid://cdnjw778s7yg5" path="res://Assets/Pets/Playful Cat/2.png" id="17_dme35"]
+[ext_resource type="Texture2D" uid="uid://npxy56ighltw" path="res://Assets/Pets/Playful Cat/3.png" id="18_uxhaj"]
+[ext_resource type="Texture2D" uid="uid://b36su5sn8os6" path="res://Assets/Pets/Playful Cat/4.png" id="19_xflxp"]
+[ext_resource type="Texture2D" uid="uid://bdpqy5kbififc" path="res://Assets/Pets/Shy Dog/1.png" id="20_ygh3c"]
+[ext_resource type="Texture2D" uid="uid://cbk8vfpmfo2r" path="res://Assets/Pets/Shy Dog/2.png" id="21_mtu0a"]
+[ext_resource type="Texture2D" uid="uid://ejrpbvudm0e3" path="res://Assets/Pets/Shy Dog/3.png" id="22_1fmsp"]
+[ext_resource type="Texture2D" uid="uid://cvtwq65uuolyc" path="res://Assets/Pets/Shy Dog/4.png" id="23_fe2xp"]
+[ext_resource type="Texture2D" uid="uid://c5wbviox3dni0" path="res://Assets/Pets/Protective Dog/1.png" id="24_nw137"]
+[ext_resource type="Script" uid="uid://c2wo21sogu8uu" path="res://protective_dog.gd" id="25_fiupo"]
+[ext_resource type="Texture2D" uid="uid://ddjqmq00cqtfi" path="res://Assets/Pets/Protective Dog/2.png" id="26_fm5i3"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xvnth"]
+load_path = "res://.godot/imported/Pet Area Background.png-3722d0459a2163a115050e1b75e94490.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5j7e5"]
+load_path = "res://.godot/imported/1.png-7af80021b8a3dc59d71d1dd7562a1911.ctex"
+
+[node name="PetAreaFake" type="Node2D" unique_id=2146015937]
+script = ExtResource("1_nxxct")
+
+[node name="Pet Area Background" type="Sprite2D" parent="." unique_id=1736540836]
+position = Vector2(956, 540)
+scale = Vector2(0.75, 0.75)
+texture = SubResource("CompressedTexture2D_xvnth")
+metadata/_edit_lock_ = true
+
+[node name="Curious Cat" type="Sprite2D" parent="." unique_id=1440723393]
+position = Vector2(679.1875, 636.8126)
+scale = Vector2(0.13848872, 0.13848872)
+texture = ExtResource("1_x3y7i")
+script = ExtResource("2_nxxct")
+base_image = ExtResource("1_x3y7i")
+emotion_frames = Array[Texture2D]([ExtResource("1_x3y7i"), ExtResource("3_jws8a"), ExtResource("4_0nnjx"), ExtResource("5_ca2jv"), ExtResource("6_hrdh1"), ExtResource("7_qpxfo")])
+time_between_frames = 0.1
+
+[node name="Excited Dog" type="Sprite2D" parent="." unique_id=1450559847]
+position = Vector2(1000, 529)
+scale = Vector2(0.13903807, 0.13903807)
+texture = ExtResource("8_2s4u2")
+script = ExtResource("9_m3faa")
+base_image = ExtResource("8_2s4u2")
+emotion_frames = Array[Texture2D]([SubResource("CompressedTexture2D_5j7e5"), ExtResource("10_k1rwa"), ExtResource("11_6er3o"), ExtResource("12_ux67l")])
+time_between_frames = 0.2
+
+[node name="Shy Cat" type="Sprite2D" parent="." unique_id=1054665476]
+position = Vector2(598, 399.00003)
+scale = Vector2(0.100097686, 0.100097686)
+texture = ExtResource("13_wwtvl")
+script = ExtResource("9_m3faa")
+base_image = ExtResource("13_wwtvl")
+emotion_frames = Array[Texture2D]([ExtResource("13_wwtvl"), ExtResource("14_nd74l"), ExtResource("15_rgk5b")])
+time_between_frames = 0.4
+
+[node name="Playful Cat" type="Sprite2D" parent="." unique_id=347904974]
+position = Vector2(1444, 436.00003)
+scale = Vector2(0.1451874, 0.1451874)
+texture = ExtResource("16_g0vw6")
+script = ExtResource("9_m3faa")
+base_image = ExtResource("16_g0vw6")
+emotion_frames = Array[Texture2D]([ExtResource("16_g0vw6"), ExtResource("17_dme35"), ExtResource("18_uxhaj"), ExtResource("19_xflxp")])
+time_between_frames = 0.3
+
+[node name="Shy Dog" type="Sprite2D" parent="." unique_id=136424701]
+position = Vector2(1386, 867)
+scale = Vector2(0.1682949, 0.1682949)
+texture = ExtResource("20_ygh3c")
+script = ExtResource("9_m3faa")
+base_image = ExtResource("20_ygh3c")
+emotion_frames = Array[Texture2D]([ExtResource("20_ygh3c"), ExtResource("21_mtu0a"), ExtResource("22_1fmsp"), ExtResource("23_fe2xp")])
+
+[node name="Protective Dog" type="Sprite2D" parent="." unique_id=1697847993]
+position = Vector2(955.99994, 803.99994)
+scale = Vector2(0.22021481, 0.22021481)
+texture = ExtResource("24_nw137")
+flip_h = true
+script = ExtResource("25_fiupo")
+base_image = ExtResource("24_nw137")
+emotion_frames = Array[Texture2D]([ExtResource("26_fm5i3"), ExtResource("24_nw137")])
+
+[node name="Back Button" type="Button" parent="." unique_id=1718942223]
+offset_left = -2.0
+offset_top = 306.0
+offset_right = 92.0
+offset_bottom = 368.0
+
+[connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
