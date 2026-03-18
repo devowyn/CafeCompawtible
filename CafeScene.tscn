@@ -48,6 +48,7 @@
 [ext_resource type="Script" uid="uid://dupksfu2ddbg4" path="res://volume_slider.gd" id="47_jtd2m"]
 [ext_resource type="Script" uid="uid://ciaa1gqjthgxu" path="res://volume_slider_sfx.gd" id="48_eu4b4"]
 [ext_resource type="PackedScene" uid="uid://qro3wi6asvm1" path="res://pet_area_fake.tscn" id="48_t2dou"]
+[ext_resource type="AudioStream" uid="uid://d2vd1e4qey81h" path="res://Assets/Sound/CafeSoundtrack.mp3" id="49_t2dou"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_3n21d"]
 
@@ -193,7 +194,6 @@ offset_bottom = 843.8747
 flat = true
 
 [node name="TitlePage" type="Sprite2D" parent="." unique_id=1986128879]
-visible = false
 z_index = 99
 position = Vector2(959, 532.00006)
 scale = Vector2(1.0010418, 0.9851853)
@@ -348,8 +348,7 @@ stream = ExtResource("27_cnf0e")
 bus = &"SFX"
 
 [node name="SettingsPanel" type="Node2D" parent="." unique_id=1951424791]
-visible = false
-z_index = 100
+z_index = 1
 script = ExtResource("29_nho2r")
 
 [node name="Overlay" type="ColorRect" parent="SettingsPanel" unique_id=1330131851]
@@ -419,8 +418,10 @@ offset_right = 1004.0
 offset_bottom = 577.0
 scale = Vector2(2, 2)
 theme_override_styles/slider = SubResource("StyleBoxFlat_eu4b4")
-min_value = -40.0
-max_value = 0.0
+min_value = 0.001
+max_value = 1.0
+step = 0.01
+value = 0.001
 script = ExtResource("47_jtd2m")
 
 [node name="VolumeSliderSFX" type="HSlider" parent="SettingsPanel/OptionContainer" unique_id=648644961]
@@ -434,6 +435,12 @@ theme_override_styles/slider = SubResource("StyleBoxFlat_kkvpf")
 min_value = -40.0
 max_value = 0.0
 script = ExtResource("48_eu4b4")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="SettingsPanel/OptionContainer" unique_id=1262054327]
+unique_name_in_owner = true
+process_mode = 3
+stream = ExtResource("49_t2dou")
+autoplay = true
 
 [node name="PetAreaFake" parent="." unique_id=2146015937 instance=ExtResource("48_t2dou")]
 process_mode = 3
@@ -453,4 +460,5 @@ offset_bottom = 353.0
 [connection signal="pressed" from="TabletScreen/Woof Cocoa Button" to="." method="_on_woof_cocoa_button_pressed"]
 [connection signal="pressed" from="TabletScreen/Compawtible Button" to="." method="_on_compawtible_button_pressed"]
 [connection signal="pressed" from="TabletScreen/Tropical Punch Button" to="." method="_on_tropical_punch_button_pressed"]
+[connection signal="value_changed" from="SettingsPanel/OptionContainer/VolumeSliderMusic" to="SettingsPanel/OptionContainer/VolumeSliderMusic" method="_on_value_changed"]
 [connection signal="pressed" from="Go To Fake Area Button" to="." method="_on_go_to_fake_area_button_pressed"]
