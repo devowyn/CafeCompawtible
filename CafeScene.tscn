@@ -348,7 +348,7 @@ stream = ExtResource("27_cnf0e")
 bus = &"SFX"
 
 [node name="SettingsPanel" type="Node2D" parent="." unique_id=1951424791]
-z_index = 1
+z_index = 101
 script = ExtResource("29_nho2r")
 
 [node name="Overlay" type="ColorRect" parent="SettingsPanel" unique_id=1330131851]
