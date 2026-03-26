@@ -94,3 +94,7 @@ func _on_go_to_fake_area_button_pressed():
 
 func _on_go_to_fake_area_pressed() -> void:
 	pass # Replace with function body.
+
+
+func _on_start_light_timer_timeout() -> void:
+	pass # Replace with function body.

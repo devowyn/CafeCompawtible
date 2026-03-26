@@ -3,19 +3,20 @@
 [ext_resource type="Texture2D" uid="uid://dm3yso06l31p1" path="res://Assets/Objects/Tablet/TabletScreen.png" id="1_cnf0e"]
 [ext_resource type="Texture2D" uid="uid://cusuxwk6605sr" path="res://Assets/Objects/Counter.png" id="1_lvsig"]
 [ext_resource type="Script" uid="uid://321044n1kho4" path="res://cafe_scene.gd" id="1_nv1sv"]
-[ext_resource type="PackedScene" uid="uid://d4cjmnhpi6x4" path="res://GymGuy.tscn" id="2_cnf0e"]
 [ext_resource type="Texture2D" uid="uid://dm18wofp0ms3j" path="res://Assets/Backgrounds/Cafe Background.png" id="2_j7tw7"]
 [ext_resource type="Script" uid="uid://b6xrx3508u7pa" path="res://tablet_screen.gd" id="2_qjl7a"]
 [ext_resource type="Script" uid="uid://dttu2bxbk7i0k" path="res://title_page.gd" id="2_qnet5"]
-[ext_resource type="PackedScene" uid="uid://dsm3u5hx6gyxw" path="res://Waitress.tscn" id="3_qjl7a"]
 [ext_resource type="Texture2D" uid="uid://cxidyrss8tlij" path="res://Assets/Objects/Tablet/TabletExit.png" id="3_y3lsr"]
 [ext_resource type="Script" uid="uid://c8r6avs0p7fi2" path="res://tablet_exit.gd" id="4_l7hfk"]
 [ext_resource type="PackedScene" uid="uid://bfsx4o0vpwy15" path="res://Vet.tscn" id="4_y3lsr"]
 [ext_resource type="Material" uid="uid://bhki8ferbtk7q" path="res://Assets/Objects/Tablet/TabletScreenMaterial.tres" id="5_j7tw7"]
-[ext_resource type="PackedScene" uid="uid://buwxeek7eqwbh" path="res://PunkDude.tscn" id="5_l7hfk"]
 [ext_resource type="Script" uid="uid://wdl2voehkeab" path="res://tablet.gd" id="5_qdtym"]
 [ext_resource type="Texture2D" uid="uid://cw2sok8wmnkyj" path="res://Assets/Objects/Dialogue Box.png" id="6_3n21d"]
 [ext_resource type="PackedScene" uid="uid://b2gxip8hmeex0" path="res://pet_area.tscn" id="6_eu4b4"]
+[ext_resource type="Material" uid="uid://crhvoxdqgug33" path="res://cafe_shader_material.tres" id="13_y8tsy"]
+[ext_resource type="Script" uid="uid://cc0k3t1m02mea" path="res://table_lamp_2.gd" id="14_kkvpf"]
+[ext_resource type="Script" uid="uid://dcvp05yk45rce" path="res://cafe_background.gd" id="15_y8tsy"]
+[ext_resource type="Script" uid="uid://dr37hkqow6cyg" path="res://table_lamp_1.gd" id="16_nv1sv"]
 [ext_resource type="FontFile" uid="uid://4qahmub48x6" path="res://Assets/Fonts/Fredoka-VariableFont_wdth,wght.ttf" id="17_cnf0e"]
 [ext_resource type="AudioStream" uid="uid://dlim5lnmksff3" path="res://Assets/Sound/MaleCustomerVoice.mp3" id="17_titoq"]
 [ext_resource type="AudioStream" uid="uid://beegsns2d0jqp" path="res://Assets/Sound/DogSound1.mp3" id="18_l70ls"]
@@ -49,6 +50,15 @@
 [ext_resource type="Script" uid="uid://ciaa1gqjthgxu" path="res://volume_slider_sfx.gd" id="48_eu4b4"]
 [ext_resource type="PackedScene" uid="uid://qro3wi6asvm1" path="res://pet_area_fake.tscn" id="48_t2dou"]
 [ext_resource type="AudioStream" uid="uid://d2vd1e4qey81h" path="res://Assets/Sound/CafeSoundtrack.mp3" id="49_t2dou"]
+
+[sub_resource type="Gradient" id="Gradient_cnf0e"]
+colors = PackedColorArray(1, 0.8509804, 0.4, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qjl7a"]
+gradient = SubResource("Gradient_cnf0e")
+fill = 1
+fill_from = Vector2(0.4982639, 0.49131945)
+fill_to = Vector2(0.8350694, 0.18229167)
 
 [sub_resource type="BoxMesh" id="BoxMesh_3n21d"]
 
@@ -110,7 +120,6 @@ corner_detail = 6
 
 [node name="CafeScene" type="Node2D" unique_id=1013386719]
 script = ExtResource("1_nv1sv")
-possible_customers = Array[PackedScene]([ExtResource("2_cnf0e"), ExtResource("3_qjl7a"), ExtResource("4_y3lsr"), ExtResource("5_l7hfk"), ExtResource("2_cnf0e"), ExtResource("4_y3lsr")])
 
 [node name="PetArea" parent="." unique_id=1707613671 instance=ExtResource("6_eu4b4")]
 visible = false
@@ -194,25 +203,62 @@ offset_bottom = 843.8747
 flat = true
 
 [node name="TitlePage" type="Sprite2D" parent="." unique_id=1986128879]
+visible = false
 z_index = 99
 position = Vector2(959, 532.00006)
 scale = Vector2(1.0010418, 0.9851853)
 texture = ExtResource("33_jtd2m")
 script = ExtResource("2_qnet5")
 
+[node name="FullShaderTimer Ceiling" type="Timer" parent="." unique_id=1451162593]
+wait_time = 15.0
+one_shot = true
+autostart = true
+
+[node name="StartDimTimer Ceiling" type="Timer" parent="." unique_id=1729571598]
+wait_time = 7.5
+one_shot = true
+autostart = true
+
+[node name="Vet" parent="." unique_id=247340950 instance=ExtResource("4_y3lsr")]
+position = Vector2(1306, 1323)
+
 [node name="CafeBackground" type="Sprite2D" parent="." unique_id=1139104390]
+material = ExtResource("13_y8tsy")
 position = Vector2(958, 540)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_j7tw7")
+script = ExtResource("15_y8tsy")
+
+[node name="Table Lamp 1" type="PointLight2D" parent="CafeBackground" unique_id=192177067]
+position = Vector2(-857.3332, -78.66661)
+rotation = -2.1836698
+scale = Vector2(2.5, 2.5)
+texture = SubResource("GradientTexture2D_qjl7a")
+script = ExtResource("16_nv1sv")
+
+[node name="StartLightTimer" type="Timer" parent="CafeBackground/Table Lamp 1" unique_id=1229624160]
+wait_time = 7.5
+one_shot = true
+autostart = true
+
+[node name="Table Lamp 2" type="PointLight2D" parent="CafeBackground" unique_id=1844070333]
+position = Vector2(649.33344, -141.33334)
+rotation = -2.1836698
+scale = Vector2(2.5, 2.5)
+texture = SubResource("GradientTexture2D_qjl7a")
+script = ExtResource("14_kkvpf")
+
+[node name="Start Light Timer" type="Timer" parent="CafeBackground/Table Lamp 2" unique_id=2039663247]
+wait_time = 7.5
+one_shot = true
+autostart = true
 
 [node name="Counter" type="Sprite2D" parent="." unique_id=1504024012]
 z_index = 19
 position = Vector2(962, 540)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_lvsig")
-
-[node name="Vet" parent="." unique_id=247340950 instance=ExtResource("4_y3lsr")]
-position = Vector2(1306, 1323)
 
 [node name="Tablet" type="SubViewportContainer" parent="." unique_id=1657896802]
 z_index = 20
@@ -266,6 +312,7 @@ mesh = SubResource("BoxMesh_qkbvb")
 surface_material_override/0 = SubResource("StandardMaterial3D_03mx4")
 
 [node name="DialogueBox" type="TextureRect" parent="." unique_id=1446347594]
+visible = false
 z_index = 6
 offset_left = 13.000015
 offset_top = -249.99998
@@ -348,6 +395,7 @@ stream = ExtResource("27_cnf0e")
 bus = &"SFX"
 
 [node name="SettingsPanel" type="Node2D" parent="." unique_id=1951424791]
+visible = false
 z_index = 101
 script = ExtResource("29_nho2r")
 
@@ -460,5 +508,8 @@ offset_bottom = 353.0
 [connection signal="pressed" from="TabletScreen/Woof Cocoa Button" to="." method="_on_woof_cocoa_button_pressed"]
 [connection signal="pressed" from="TabletScreen/Compawtible Button" to="." method="_on_compawtible_button_pressed"]
 [connection signal="pressed" from="TabletScreen/Tropical Punch Button" to="." method="_on_tropical_punch_button_pressed"]
+[connection signal="timeout" from="FullShaderTimer Ceiling" to="CafeBackground" method="_on_full_shader_timer_timeout"]
+[connection signal="timeout" from="StartDimTimer Ceiling" to="CafeBackground" method="_on_start_dim_timer_timeout"]
+[connection signal="timeout" from="CafeBackground/Table Lamp 1/StartLightTimer" to="." method="_on_start_light_timer_timeout"]
 [connection signal="value_changed" from="SettingsPanel/OptionContainer/VolumeSliderMusic" to="SettingsPanel/OptionContainer/VolumeSliderMusic" method="_on_value_changed"]
 [connection signal="pressed" from="Go To Fake Area Button" to="." method="_on_go_to_fake_area_button_pressed"]
