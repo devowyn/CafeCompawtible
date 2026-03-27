@@ -50,22 +50,40 @@ func _on_go_to_pet_area_button_pressed():
 		$PetArea.show()
 
 
-# --- THE MASTER SERVE FUNCTION ---
+# --- THE MASTER SERVE FUNCTION (ANIMATED SPRITE VERSION) ---
 func serve_specific_drink(drink_name: String):
-	# Hide the tablet instantly!
-	if has_node("TabletScreen"):
-		$TabletScreen.hide() 
-	
 	var active_customers = get_tree().get_nodes_in_group("Customer")
 	
 	if active_customers.size() > 0:
 		var current_customer = active_customers[0]
 		
+		# Prevent double-serving
 		if current_customer.has_been_served or current_customer.is_leaving:
 			return 
 			
-		if current_customer.has_method("receive_drink"):
-			current_customer.receive_drink(drink_name)
+		# INSTANT LOCK: Hide the tablet immediately!
+		if has_node("TabletScreen"):
+			$TabletScreen.hide() 
+			
+		# --- 1. SHOW AND PLAY THE EXPLOSION! ---
+		if drink_name == current_customer.wanted_drink: 
+			# Correct Drink!
+			$CorrectExplosion.global_position = get_global_mouse_position()
+			$CorrectExplosion.show() # Make it visible!
+			$CorrectExplosion.play("explode") 
+		else:
+			# Wrong Drink!
+			$WrongExplosion.global_position = get_global_mouse_position()
+			$WrongExplosion.show() # Make it visible!
+			$WrongExplosion.play("explode") 
+
+		# --- 2. THE FREEZE FRAME ---
+		await get_tree().create_timer(0.5).timeout
+		
+		# --- 3. SERVE ---
+		if is_instance_valid(current_customer):
+			if current_customer.has_method("receive_drink"):
+				current_customer.receive_drink(drink_name)
 
 
 # --- YOUR 6 BUTTON CONNECTIONS ---
@@ -91,10 +109,15 @@ func _on_go_to_fake_area_button_pressed():
 	$PetAreaFake.show()
 	get_tree().paused = true
 
-
 func _on_go_to_fake_area_pressed() -> void:
 	pass # Replace with function body.
 
-
 func _on_start_light_timer_timeout() -> void:
 	pass # Replace with function body.
+
+
+func _on_correct_explosion_animation_finished() -> void:
+	$CorrectExplosion.hide()
+
+func _on_wrong_explosion_animation_finished() -> void:
+	$WrongExplosion.hide()

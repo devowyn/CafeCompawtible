@@ -5,8 +5,12 @@
 [resource]
 shader = ExtResource("1_1v4vu")
 shader_parameter/tint_color = Color(0.4, 0.38, 0.35, 1)
-shader_parameter/brightness = 0.85
-shader_parameter/bulb_pos = PackedVector2Array(0.1, 0.1, 0.5, 0.01, 0.9, 0.1)
+shader_parameter/brightness = 0.0
+shader_parameter/bulb_pos = PackedVector2Array(0.212, 0.08, 0.5, 0.08, 0.716, 0.08)
 shader_parameter/cone_angle = 0.5
-shader_parameter/cone_length = 0.4
-shader_parameter/bulb_color = Color(1, 0.9, 0.7, 1)
+shader_parameter/cone_len = 0.4
+shader_parameter/bulb_color = Color(0.98850673, 0.8774643, 0.9327883, 1)
+shader_parameter/lamp_pos = PackedVector2Array(0.219, 0.44, 0.719, 0.4)
+shader_parameter/lamp_radius = 0.1
+shader_parameter/lamp_color = Color(0.9882353, 0.8784314, 0.93333334, 1)
+shader_parameter/lamp_energy = 0.4750000225625

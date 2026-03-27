@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://b3rjw0kdjtm4x" path="res://Assets/Character expressions/RBF_BusinessGuy.png" id="4_we1fw"]
 
 [node name="OldDude" type="Sprite2D" unique_id=1848895581 groups=["Customer"]]
+z_index = 5
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_u5566")
 script = ExtResource("2_oslnl")
 happy_face = ExtResource("1_u5566")

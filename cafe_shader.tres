@@ -3,37 +3,55 @@
 [resource]
 code = "shader_type canvas_item;
 
-uniform vec4 tint_color : source_color = vec4(0.4, 0.38, 0.35, 1.0);
-uniform float brightness = 0.85;
+// --- GLOBAL SETTINGS ---
+uniform vec4 tint_color : source_color;
+uniform float brightness : hint_range(0.0, 1.0) = 1.0;
 
-// Declare array of bulb positions (set in Inspector or script)
+// --- CEILING LIGHTS (CONES) ---
 uniform vec2 bulb_pos[3];
+uniform float cone_angle = 0.5;
+uniform float cone_len = 0.4;
+uniform vec4 bulb_color : source_color;
 
-uniform float cone_angle = 0.5;   // radians
-uniform float cone_length = 0.6;  // how far the beam extends
-uniform vec4 bulb_color : source_color = vec4(1.0, 0.9, 0.7, 1.0);
+// --- TABLE LAMPS (CIRCULAR) ---
+// Upgraded to a list of 2 lamps!
+uniform vec2 lamp_pos[2]; 
+uniform float lamp_radius = 0.1;
+uniform vec4 lamp_color : source_color = vec4(1.0, 0.8, 0.5, 1.0);
+uniform float lamp_energy : hint_range(0.0, 1.0) = 0.0;
 
 void fragment() {
+    // 1. Get the base cafe drawing
     vec4 tex_color = texture(TEXTURE, UV);
-    tex_color.rgb *= tint_color.rgb * brightness;
+    vec4 base_color = mix(tint_color * tex_color, tex_color, brightness);
 
-    // Loop through each bulb
+    // 2. Draw the 3 Ceiling Cones
+    float total_cone = 0.0;
     for (int i = 0; i < 3; i++) {
-        vec2 dir = UV - bulb_pos[i];
-
-        if (dir.y > 0.0) { // only pixels below bulb
-            float dist = length(dir);
-            vec2 ndir = normalize(dir);
-            vec2 down = vec2(0.0, 1.0);
-            float angle = acos(dot(ndir, down));
-
-            if (angle < cone_angle && dist < cone_length) {
-                float intensity = (1.0 - dist / cone_length) * (1.0 - angle / cone_angle);
-                tex_color.rgb += bulb_color.rgb * intensity * 0.8;
+        vec2 diff = UV - bulb_pos[i];
+        float dist = length(diff);
+        if (dist > 0.0) {
+            vec2 dir = diff / dist;
+            float spot = dot(dir, vec2(0.0, 1.0)); // Pointing straight down
+            if (spot > (1.0 - cone_angle)) {
+                float falloff = smoothstep(cone_len, 0.0, dist);
+                float edge = smoothstep(1.0 - cone_angle, 1.0, spot);
+                total_cone += falloff * edge;
             }
         }
     }
 
-    COLOR = tex_color;
-}
-"
+    // 3. Draw the 2 Circular Table Lamps!
+    float total_lamp_glow = 0.0;
+    for (int i = 0; i < 2; i++) {
+        // Calculate the distance from each lamp's position
+        float dist_lamp = distance(UV, lamp_pos[i]);
+        total_lamp_glow += smoothstep(lamp_radius, 0.0, dist_lamp);
+    }
+    // Apply the master energy slider to BOTH lamps at once
+    total_lamp_glow *= lamp_energy; 
+
+    // 4. Combine all the lights and add them to the room
+    vec3 final_light = (bulb_color.rgb * total_cone) + (lamp_color.rgb * total_lamp_glow);
+    COLOR = vec4(base_color.rgb + (final_light * tex_color.rgb), tex_color.a);
+}"
