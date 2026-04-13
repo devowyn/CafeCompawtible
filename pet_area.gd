@@ -65,6 +65,14 @@ func ask_to_confirm(pet_type, pet_emotion, pet_image):
 	# Slap the selected picture into the UI panel
 	pet_preview.texture = pet_image
 	
+	# --- PLAY THE ANIMAL SOUND! ---
+	if pet_type == "Cat":
+		if has_node("MeowSound"):
+			$MeowSound.play()
+	elif pet_type == "Dog":
+		if has_node("BarkSound"):
+			$BarkSound.play()
+	
 	# Show the Yes/No menu!
 	confirm_panel.show()
 
@@ -78,36 +86,36 @@ func _on_yes_button_pressed():
 		is_correct = true
 		
 	# --- 2. INSTANT LOCK: CLOSE AND UNPAUSE ---
-	# We hide the pet menu and unpause the game so we are back in live time!
 	confirm_panel.hide()
 	self.hide() 
 	get_tree().paused = false 
 	
-	# --- 3. BORROW THE CAFE EXPLOSIONS ---
-	# We reach out to the main Cafe scene to grab the explosions you already made
+	# --- 3. BORROW CAFE EXPLOSIONS AND SOUNDS ---
 	var cafe_correct_explosion = get_parent().get_node("CorrectExplosion")
 	var cafe_wrong_explosion = get_parent().get_node("WrongExplosion")
+	
+	# Grab the new speakers!
+	var cafe_correct_sound = get_parent().get_node("CorrectSound")
+	var cafe_wrong_sound = get_parent().get_node("WrongSound")
 	
 	if is_correct:
 		cafe_correct_explosion.global_position = get_global_mouse_position()
 		cafe_correct_explosion.show() 
 		cafe_correct_explosion.play("explode") 
+		cafe_correct_sound.play() # <--- PLAY CORRECT SOUND!
 	else:
 		cafe_wrong_explosion.global_position = get_global_mouse_position()
 		cafe_wrong_explosion.show() 
 		cafe_wrong_explosion.play("explode") 
+		cafe_wrong_sound.play() # <--- PLAY WRONG SOUND!
 
 	# --- 4. THE FREEZE FRAME ---
-	# Because the game is unpaused now, your normal 0.5s timer works perfectly!
 	await get_tree().create_timer(0.5).timeout
 	
 	# --- 5. TELL THE CUSTOMER ---
 	var active_customers = get_tree().get_nodes_in_group("Customer")
-	
 	if active_customers.size() > 0:
 		var current_customer = active_customers[0]
-		
-		# Hand them the pet!
 		if is_instance_valid(current_customer):
 			if current_customer.has_method("receive_pet_and_leave"):
 				current_customer.receive_pet_and_leave(is_correct)

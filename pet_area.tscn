@@ -30,6 +30,8 @@
 [ext_resource type="Script" uid="uid://c2wo21sogu8uu" path="res://protective_dog.gd" id="19_yd5k6"]
 [ext_resource type="Texture2D" uid="uid://ddjqmq00cqtfi" path="res://Assets/Pets/Protective Dog/2.png" id="20_iq5kb"]
 [ext_resource type="Texture2D" uid="uid://cvtwq65uuolyc" path="res://Assets/Pets/Shy Dog/4.png" id="20_sq8xx"]
+[ext_resource type="AudioStream" uid="uid://cjrurfa36y4hb" path="res://Assets/Sound/CatSound1.mp3" id="31_gka04"]
+[ext_resource type="AudioStream" uid="uid://beegsns2d0jqp" path="res://Assets/Sound/DogSound1.mp3" id="32_7tgcw"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ccq8f"]
 load_path = "res://.godot/imported/Pet Area Background.png-3722d0459a2163a115050e1b75e94490.ctex"
@@ -224,6 +226,12 @@ offset_right = 1303.0
 offset_bottom = 849.0
 mouse_filter = 2
 expand_mode = 1
+
+[node name="MeowSound" type="AudioStreamPlayer2D" parent="." unique_id=519427136]
+stream = ExtResource("31_gka04")
+
+[node name="BarkSound" type="AudioStreamPlayer2D" parent="." unique_id=1921512082]
+stream = ExtResource("32_7tgcw")
 
 [connection signal="pressed" from="Curious Cat/Curious Cat Button" to="." method="_on_curious_cat_button_pressed"]
 [connection signal="pressed" from="Excited Dog/Excited Dog Button" to="." method="_on_excited_dog_button_pressed"]

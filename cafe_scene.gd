@@ -65,17 +65,26 @@ func serve_specific_drink(drink_name: String):
 		if has_node("TabletScreen"):
 			$TabletScreen.hide() 
 			
-		# --- 1. SHOW AND PLAY THE EXPLOSION! ---
+		# --- 1. SHOW, PLAY THE EXPLOSION, AND PLAY SOUND! ---
 		if drink_name == current_customer.wanted_drink: 
 			# Correct Drink!
 			$CorrectExplosion.global_position = get_global_mouse_position()
-			$CorrectExplosion.show() # Make it visible!
+			$CorrectExplosion.show() 
 			$CorrectExplosion.play("explode") 
+			
+			# PLAY THE DING!
+			if has_node("CorrectSound"):
+				$CorrectSound.play()
+				
 		else:
 			# Wrong Drink!
 			$WrongExplosion.global_position = get_global_mouse_position()
-			$WrongExplosion.show() # Make it visible!
+			$WrongExplosion.show() 
 			$WrongExplosion.play("explode") 
+			
+			# PLAY THE BUZZER!
+			if has_node("WrongSound"):
+				$WrongSound.play()
 
 		# --- 2. THE FREEZE FRAME ---
 		await get_tree().create_timer(0.5).timeout
@@ -114,7 +123,6 @@ func _on_go_to_fake_area_pressed() -> void:
 
 func _on_start_light_timer_timeout() -> void:
 	pass # Replace with function body.
-
 
 func _on_correct_explosion_animation_finished() -> void:
 	$CorrectExplosion.hide()

@@ -58,6 +58,8 @@
 [ext_resource type="Script" uid="uid://ciaa1gqjthgxu" path="res://volume_slider_sfx.gd" id="48_eu4b4"]
 [ext_resource type="PackedScene" uid="uid://qro3wi6asvm1" path="res://pet_area_fake.tscn" id="48_t2dou"]
 [ext_resource type="AudioStream" uid="uid://d2vd1e4qey81h" path="res://Assets/Sound/CafeSoundtrack.mp3" id="49_t2dou"]
+[ext_resource type="AudioStream" uid="uid://nrdupr4dce2g" path="res://Assets/Sound/Correct.mp3" id="59_lp2uf"]
+[ext_resource type="AudioStream" uid="uid://j5fox54tjeur" path="res://Assets/Sound/Wrong.mp3" id="60_jlq8g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fntkt"]
 animations = [{
@@ -231,7 +233,6 @@ offset_bottom = 843.8747
 flat = true
 
 [node name="TitlePage" type="Sprite2D" parent="." unique_id=1986128879]
-visible = false
 z_index = 99
 position = Vector2(959, 532.00006)
 scale = Vector2(1.0010418, 0.9851853)
@@ -512,6 +513,12 @@ offset_left = 1829.0
 offset_top = 288.0
 offset_right = 1916.0
 offset_bottom = 353.0
+
+[node name="CorrectSound" type="AudioStreamPlayer2D" parent="." unique_id=835668537]
+stream = ExtResource("59_lp2uf")
+
+[node name="WrongSound" type="AudioStreamPlayer2D" parent="." unique_id=1639194318]
+stream = ExtResource("60_jlq8g")
 
 [connection signal="pressed" from="TabletScreen" to="." method="_on_tablet_screen_pressed"]
 [connection signal="pressed" from="TabletScreen/Pawfee Button" to="." method="_on_pawfee_button_pressed"]
